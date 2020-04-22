@@ -51,110 +51,69 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '首页', icon: 'dashboard' }
     }]
   },
-
   {
-    path: '/example',
+    path: '/application',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    redirect: '/application/index',
+    name: 'Application',
+    meta: { title: '应用管理', icon: 'component', breadcrumb: false },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'application',
+        name: 'Application',
+        component: () => import('@/views/application/index'),
+        meta: { title: '应用管理', icon: 'component', noCache: true }
+      }
+    ]
+  },
+  {
+    path: '/user',
+    component: Layout,
+    redirect: '/user/index',
+    name: 'User',
+    meta: { title: '用户管理', icon: 'user' },
+    children: [
+      {
+        path: 'account',
+        name: 'Account',
+        component: () => import('@/views/user/account'),
+        meta: { title: '账号管理' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'role',
+        name: 'Role',
+        component: () => import('@/views/user/role'),
+        meta: { title: '角色管理' }
       }
     ]
   },
-
   {
-    path: '/form',
+    path: '/system',
     component: Layout,
+    redirect: '/system/index',
+    name: 'System',
+    meta: { title: '系统管理', icon: 'table' },
     children: [
       {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
-  },
-
-  {
-    path: '/nested',
-    component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
-    meta: {
-      title: 'Nested',
-      icon: 'nested'
-    },
-    children: [
-      {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
+        path: 'syslog',
+        name: 'Syslog',
+        component: () => import('@/views/system/syslog'),
+        meta: { title: '系统日志' }
       },
       {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        meta: { title: 'menu2' }
-      }
-    ]
-  },
-
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
+        path: 'analysis',
+        name: 'Analysis',
+        component: () => import('@/views/system/analysis'),
+        meta: { title: '统计分析' }
+      },
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        path: 'navigation',
+        name: 'Navigation',
+        component: () => import('@/views/system/navigation'),
+        meta: { title: '功能导航' }
       }
     ]
   },

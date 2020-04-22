@@ -13,12 +13,12 @@
           {{ scope.$index }}
         </template>
       </el-table-column>
-      <el-table-column label="Title">
+      <el-table-column label="账号">
         <template slot-scope="scope">
           {{ scope.row.title }}
         </template>
       </el-table-column>
-      <el-table-column label="Author" width="110" align="center">
+      <el-table-column label="用户名" width="110" align="center">
         <template slot-scope="scope">
           <span>{{ scope.row.author }}</span>
         </template>
