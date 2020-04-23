@@ -49,7 +49,7 @@ export default [
 
   // get user info
   {
-    url: '/vue-admin-template/user/info\.*',
+    url: '/vue-element-admin/user/info\.*',
     type: 'get',
     response: config => {
       const { token } = config.query
@@ -72,7 +72,7 @@ export default [
 
   // user logout
   {
-    url: '/vue-admin-template/user/logout',
+    url: '/vue-element-admin/user/logout',
     type: 'post',
     response: _ => {
       return {
